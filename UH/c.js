@@ -26,9 +26,7 @@ const tambahProduk = () => {
     rl.question('Masukkan nama produk yang ingin ditambah: ', (namaBaru) => {
         rl.question('Masukkan harga produk yang ingin ditambah: ', (hargaBaru) => {
             rl.question('Masukkan stok produk yang ingin ditambah: ', (stokBaru) => {
-                hargaBaru = parseInt(hargaBaru);
-                stokBaru = parseInt(stokBaru);
-                produk.push({id: produk.length + 1, nama: namaBaru, harga: hargaBaru, stok: stokBaru});
+                produk.push({id: produk.length + 1, nama: namaBaru, harga: hargaBaru, stok: stokBaru})
                 console.log('Produk Berhasil Ditambahkan!');
                 produk.forEach((prod) => {
                     console.log(`${prod.id}. ${prod.nama}`);
@@ -86,9 +84,9 @@ const terimaPesanan = () => {
                     riwayatPenjualan.forEach((pesanan) => {
                         console.log(`${pesanan.id}. ${pesanan.nama} - Jumlah: ${pesanan.jumlah} buah`);
                     });
-                    rl.question('Apakah ada produk lain yang ingin dihapus (y/n): ', (lanjut) => {
+                    rl.question('Apakah ada produk lain yang ingin dipesan (y/n): ', (lanjut) => {
                         if (lanjut.toLowerCase() == 'y') {
-                            hapusProduk();
+                            terimaPesanan();
                         }else{
                             mainMenu();
                         }
